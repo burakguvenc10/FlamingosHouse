@@ -1,0 +1,44 @@
+name: FlamingosHouse
+description: "Flamingos House Cafe And Social Club"
+publish_to: 'UAT'
+version: 1.0.0
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  js: any
+  flutter_lints: ^5.0.0
+  convex_bottom_bar: ^3.2.0
+  auto_animated: ^3.2.0
+  rflutter_alert: ^2.0.7
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/flamingo.png
+    - assets/
+
+  fonts:
+    - family: Arimo-Bold
+      fonts:
+        - asset: fonts/arimo-bold.ttf
+
+    - family: Arimo-BoldItalic
+      fonts:
+        - asset: fonts/arimo-boldItalic.ttf
+
+    - family: Arimo-Italic
+      fonts:
+        - asset: fonts/arimo-italic.ttf
+
+    - family: Arimo-Regular
+      fonts:
+        - asset: fonts/arimo-regular.ttf
