@@ -7,6 +7,8 @@ import 'Views/Menu.dart';
 import 'Views/Flamingo.dart';
 import 'Views/Activities.dart';
 import 'Views/Schedule.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+
 
 void main() {
   //Ekran Döndürme
@@ -47,6 +49,9 @@ class _Main extends State<Main> {
     setState(() {
       _selectedIndex = index;
     });
+    if(_selectedIndex == 2){
+      showAlert(context);
+    }
     pageController.jumpToPage(index);
   }
 
@@ -72,6 +77,17 @@ class _Main extends State<Main> {
       ),
     );
   }
+}
+
+void showAlert(BuildContext context){
+  Alert(
+      context: context,
+      title: "Neden Flamingo?",
+      style: AlertStyle(titleStyle: TextStyle(fontSize: 25,color: Colors.black,fontFamily:'Arimo-Bold',)),
+      desc: "Flamingo denge, duyarlılık, yeniden doğuş, fedakarlık, çekicilik ve zarafetin sembolüdür ve dört elementle ilişkilendirilir:\n"
+          " Su, hava, ateş ve toprak. Kendini beslemek için daldığı su, ruhu, insan ruhunu ve arınmayı temsil eder. Hava, maneviyatımızdaki görünmezin, uçuşun sembolüdür",
+      image: Image.asset("assets/flamingo1.jpg",width: MediaQuery.sizeOf(context).width, height: 180,)
+  ).show();
 }
 
 
