@@ -10,6 +10,7 @@ class _Activities extends State<Activities> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xffEBFFFA),
       child: Column(
         children: [
           Text("Activities")

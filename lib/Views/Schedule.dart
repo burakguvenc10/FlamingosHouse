@@ -46,10 +46,14 @@ class _Schedule extends State<Schedule> {
         setState(() {
           loadingPercentage = 100;
         });
+      },
+      onHttpError: (error){
+        //Hata!
       }
     ))
     ..loadRequest(Uri.parse(URL));
   }
 
 }
+
 

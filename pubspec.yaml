@@ -25,7 +25,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/flamingo.png
     - assets/
 
   fonts:

@@ -10,6 +10,7 @@ class _Menu extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xffEBFFFA),
       child: Column(
         children: [
           Text("Menu")

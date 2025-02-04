@@ -11,22 +11,22 @@ class _Flamingo extends State<Flamingo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffD1F8EF),
-      child: Center(
+      color: Color(0xffEBFFFA),
+      child: SingleChildScrollView(
         child: Column(
             children: <Widget>[
               Row(
                 children: [
                     Image.asset(
                         'assets/flamingo1.jpg',
-                        height: 170,
+                        height: 150,
                         width:  MediaQuery.sizeOf(context).width/2,
                         fit:BoxFit.fill
                     ),
 
                     Image.asset(
                         'assets/flamingo2.jpg',
-                        height: 170,
+                        height: 150,
                         width:  MediaQuery.sizeOf(context).width/2,
                         fit:BoxFit.fill
                     ),
