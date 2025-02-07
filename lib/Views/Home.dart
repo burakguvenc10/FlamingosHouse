@@ -12,51 +12,37 @@ class _Home extends State<Home> {
 
   List<Container> cards = [
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/flamingosHouse2.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/coffe.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/breakfeast.webp",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/burger.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/coctail.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/coffeView.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
-      height: 250,
       alignment: Alignment.center,
-      padding: EdgeInsets.all(15),
       child: Image.asset("assets/icedLatte.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
@@ -77,74 +63,99 @@ class _Home extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
-                    radius: 26,
+                    radius: 30,
                     backgroundColor: Color(0xff31363F),
                     child: Image.asset("assets/flamingo.png")
                 ),
 
                 SizedBox(
-                  width: 20,
+                  width: 25,
                 ),
 
                 CircleAvatar(
-                    radius: 26,
+                    radius: 30,
                     backgroundColor: Color(0xff31363F),
                     child: Image.asset("assets/flamingo.png")
                 ),
 
                 SizedBox(
-                  width: 20,
+                  width: 25,
                 ),
 
                 CircleAvatar(
-                    radius: 26,
+                    radius: 30,
                     backgroundColor: Color(0xff31363F),
                     child: Image.asset("assets/flamingo.png")
                 ),
 
-                SizedBox(
-                  width: 10,
-                ),
               ],
             ),
             SizedBox(height: 20,),
 
-            Flexible(
-              child: Stack(
-                children: [
-                  CardSwiper(
-                    controller: controller,
-                    cardsCount: cards.length,
-                    onSwipe: _onSwipe,
-                    onUndo: _onUndo,
-                    isLoop: true,
-                    allowedSwipeDirection: AllowedSwipeDirection.all(),
-                    numberOfCardsDisplayed: 2,
-                    backCardOffset: const Offset(25, 25),
-                    padding: const EdgeInsets.all(18.0),
-                    cardBuilder: (context, index, percentThresholdX, percentThresholdY) => cards[index],
+            Card(
+              shadowColor: Colors.grey,
+              elevation: 12,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                height: 260,
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xff31363F),Color(0xff66cdaa)]
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 260),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        FloatingActionButton(
-                          onPressed: () => controller.swipe(CardSwiperDirection.left),
-                          child: const Icon(Icons.keyboard_arrow_left),
-                          splashColor: Colors.grey.shade200,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Column(
+                    children: [
+                      Flexible(
+                        child: Stack(
+                          children: [
+                            CardSwiper(
+                              controller: controller,
+                              cardsCount: cards.length,
+                              onSwipe: _onSwipe,
+                              onUndo: _onUndo,
+                              isLoop: true,
+                              allowedSwipeDirection: AllowedSwipeDirection.all(),
+                              numberOfCardsDisplayed: 1,
+                              backCardOffset: const Offset(25, 25),
+                              padding: const EdgeInsets.all(5.0),
+                              cardBuilder: (context, index, percentThresholdX, percentThresholdY) => cards[index],
+                            ),
+                            Container(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 1),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FloatingActionButton(
+                                      backgroundColor: Colors.blueGrey.shade100,
+                                      onPressed: () => controller.swipe(CardSwiperDirection.left),
+                                      child: const Icon(Icons.keyboard_arrow_left),
+                                      splashColor: Colors.pinkAccent.shade100,
+                                    ),
+                                    SizedBox(width: 10,),
+                                    FloatingActionButton(
+                                      backgroundColor: Colors.blueGrey.shade100,
+                                      onPressed: () =>
+                                          controller.swipe(CardSwiperDirection.right),
+                                      child: const Icon(Icons.keyboard_arrow_right),
+                                      splashColor: Colors.pinkAccent.shade100,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(width: 10,),
-                        FloatingActionButton(
-                          onPressed: () =>
-                              controller.swipe(CardSwiperDirection.right),
-                          child: const Icon(Icons.keyboard_arrow_right),
-                          splashColor: Colors.grey.shade200,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                      ),
+                    ],
+                 ),
+                )
               ),
             ),
 
