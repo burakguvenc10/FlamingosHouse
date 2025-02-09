@@ -18,32 +18,37 @@ class _Home extends State<Home> {
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/coffe.jpg",fit: BoxFit.fill),
+      child: Image.asset("assets/lists.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/breakfeast.webp",fit: BoxFit.fill),
+      child: Image.asset("assets/drinkEat/coffe.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/burger.jpg",fit: BoxFit.fill),
+      child: Image.asset("assets/drinkEat/breakfeast.webp",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/coctail.jpg",fit: BoxFit.fill),
+      child: Image.asset("assets/drinkEat/burger.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/coffeView.jpg",fit: BoxFit.fill),
+      child: Image.asset("assets/drinkEat/coctail.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
     Container(
       alignment: Alignment.center,
-      child: Image.asset("assets/icedLatte.jpg",fit: BoxFit.fill),
+      child: Image.asset("assets/drinkEat/coffeView.jpg",fit: BoxFit.fill),
+      color: Colors.white60,
+    ),
+    Container(
+      alignment: Alignment.center,
+      child: Image.asset("assets/drinkEat/icedLatte.jpg",fit: BoxFit.fill),
       color: Colors.white60,
     ),
 
@@ -54,7 +59,7 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xffEBFFFA),
-      child: SafeArea(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 10,),
@@ -65,7 +70,7 @@ class _Home extends State<Home> {
                 CircleAvatar(
                     radius: 30,
                     backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingo.png")
+                    child: Image.asset("assets/flamingoLogo.png")
                 ),
 
                 SizedBox(
@@ -75,7 +80,7 @@ class _Home extends State<Home> {
                 CircleAvatar(
                     radius: 30,
                     backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingo.png")
+                    child: Image.asset("assets/flamingoLogo.png")
                 ),
 
                 SizedBox(
@@ -85,7 +90,7 @@ class _Home extends State<Home> {
                 CircleAvatar(
                     radius: 30,
                     backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingo.png")
+                    child: Image.asset("assets/flamingoLogo.png")
                 ),
 
               ],
@@ -158,7 +163,6 @@ class _Home extends State<Home> {
                 )
               ),
             ),
-
 
           ],
         ),

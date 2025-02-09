@@ -16,7 +16,7 @@ class Bottombar extends StatelessWidget {
       items: [
         TabItem(icon: Icons.home, title: 'Anasayfa'),
         TabItem(icon: Icons.menu_book, title: 'Menü'),
-        TabItem(icon: Image.asset("assets/flamingo.png",width: 50,height: 50)),
+        TabItem(icon: Image.asset("assets/flamingoLogo.png",width: 50,height: 50)),
         TabItem(icon: Icons.sports_gymnastics, title: 'Aktivite'),
         TabItem(icon: Icons.schedule, title: 'Program'),
       ],

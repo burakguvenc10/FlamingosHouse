@@ -26,6 +26,8 @@ flutter:
 
   assets:
     - assets/
+    - assets/activity/
+    - assets/drinkEat/
 
   fonts:
     - family: Arimo-Bold
