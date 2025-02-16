@@ -20,6 +20,7 @@ dev_dependencies:
   rflutter_alert: ^2.0.7
   webview_flutter: ^4.10.0
   flutter_card_swiper: ^7.0.2
+  animated_text_kit: ^4.2.2
 
 flutter:
   uses-material-design: true

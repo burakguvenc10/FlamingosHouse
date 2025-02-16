@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class Home extends StatefulWidget {
 
 class _Home extends State<Home> {
   final CardSwiperController controller = CardSwiperController();
+  AnimatedTextController myAnimatedTextController = AnimatedTextController();
 
   List<Container> cards = [
     Container(
@@ -62,7 +64,7 @@ class _Home extends State<Home> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(height: 5,),
             //Header Avatars
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +97,7 @@ class _Home extends State<Home> {
 
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 10,),
 
             Card(
               shadowColor: Colors.grey,
@@ -164,6 +166,65 @@ class _Home extends State<Home> {
               ),
             ),
 
+            SizedBox(height: 1,),
+            
+            Padding(padding: EdgeInsets.all(18.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    color: Color(0xffB9F3E4),
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Column(
+                      children: [
+                        AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                "HOŞ GELDİNİZ! ",
+                                textStyle: const TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xffFF74B1),
+                                    fontFamily: 'Arimo-Regular'
+                                ),
+                                speed: const Duration(milliseconds: 80),
+                              ),
+                            ],
+                            totalRepeatCount: 3,
+                            pause: const Duration(milliseconds: 100),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                            controller: myAnimatedTextController
+                        ),
+
+                        AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                "Burada, sıcak bir kafe ortamında leziz içeceklerin tadını çıkarırken aynı zamanda sosyal kulüp etkinlikleriyle yeni dostluklar kurabilir," +
+                                    " keyifli anlar yaşayabilirsiniz.\nRenkli dünyamıza katılın ve Flamingos House’un canlı Atmosferini Yakından Keşfedin!",
+                                textStyle: const TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff31363F),
+                                    fontFamily: 'Arimo-Regular'
+                                ),
+                                speed: const Duration(milliseconds: 50),
+                              ),
+                            ],
+                            totalRepeatCount: 1,
+                            pause: const Duration(milliseconds: 80),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                            controller: myAnimatedTextController
+                        ),
+                      ],
+                    ),
+                   ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

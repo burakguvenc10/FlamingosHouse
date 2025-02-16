@@ -81,16 +81,17 @@ class _Main extends State<Main> {
 
 void showAlert(BuildContext context){
 
+  //NedenFlamingo Popup Alert
   Alert(
       context: context,
-      title: "Neden Flamingo?",
+      title: "Neden FLAMİNGO?",
       style: AlertStyle(titleStyle: TextStyle(fontSize: 25,color: Colors.black,fontFamily:'Arimo-Bold',)),
-      image: Image.asset("assets/flamingo1.jpg",height: 150,),
+      image: Image.asset("assets/flamingo2.jpg",height: 230,),
       content: Column(
         children: <Widget>[
           Text(
-              "  Flamingo denge, duyarlılık, yeniden doğuş, fedakarlık, çekicilik ve zarafetin sembolüdür ve dört elementle ilişkilendirilir:\n"+
-              " Su, hava, ateş ve toprak. Kendini beslemek için daldığı su, ruhu, insan ruhunu ve arınmayı temsil eder. Hava, maneviyatımızdaki görünmezin, uçuşun sembolüdür",style: TextStyle(fontSize: 14, color: Colors.black,fontFamily:'Arimo-Regular',),
+              "  Flamingo denge, duyarlılık, yeniden doğuş, fedakarlık, çekicilik ve zarafetin sembolüdür ve dört elementle ilişkilendirilir:\n" +
+              " Su, hava, ateş ve toprak. Kendini beslemek için daldığı su, ruhu, insan ruhunu ve arınmayı temsil eder. Hava, maneviyatımızdaki görünmezin, uçuşun sembolüdür.",style: TextStyle(fontSize: 14, color: Colors.black,fontFamily:'Arimo-Regular',),
           ),
         ],
       ),

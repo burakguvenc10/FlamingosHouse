@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../Notifications.dart';
 
 class Appbar extends StatelessWidget {
   @override
@@ -17,7 +18,10 @@ class Appbar extends StatelessWidget {
         IconButton(
             icon: Icon(Icons.notifications_active_sharp,color: Colors.white,size: 22,),
             onPressed:(){
-              //
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Notifications())
+              );
             }
         ),
       ],

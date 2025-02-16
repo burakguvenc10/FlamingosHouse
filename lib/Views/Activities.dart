@@ -26,7 +26,29 @@ class _Activities extends State<Activities> {
     return GridView.builder(
       itemCount: 10,
       itemBuilder: (BuildContext context, int index){
-        return Image.asset(imageList[index], fit: BoxFit.cover);
+        return Card(
+          child: Container(
+            child: Column(
+              children: [
+
+                Padding(padding: EdgeInsets.all(3),
+                child: Column(
+                  children: [
+                    Image.asset(imageList[index],height: 140,width:MediaQuery.sizeOf(context).width,),
+
+                    Container(
+                      color: Colors.grey.shade200,
+                      child: Center(
+                          child: Text("Yoga",style: TextStyle(fontSize: 17,color: Colors.black87,fontFamily: 'Arimo-Regular'),)
+                      ),
+                    ),
+                  ],
+                 ),
+                ),
+              ],
+            ),
+          ),
+        );
       },
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
