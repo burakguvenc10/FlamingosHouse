@@ -21,6 +21,8 @@ dev_dependencies:
   webview_flutter: ^4.10.0
   flutter_card_swiper: ^7.0.2
   animated_text_kit: ^4.2.2
+  in_app_review: ^2.0.10
+  cupertino_icons: ^1.0.8
 
 flutter:
   uses-material-design: true

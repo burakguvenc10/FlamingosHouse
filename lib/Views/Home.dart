@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:in_app_review/in_app_review.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
   final CardSwiperController controller = CardSwiperController();
   AnimatedTextController myAnimatedTextController = AnimatedTextController();
+  final InAppReview inAppReview = InAppReview.instance;
 
   List<Container> cards = [
     Container(
@@ -64,40 +67,66 @@ class _Home extends State<Home> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 5,),
-            //Header Avatars
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingoLogo.png")
-                ),
+            SizedBox(height: 2,),
 
-                SizedBox(
-                  width: 25,
-                ),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    color: Color(0xffB9F3E4),
+                    child: Padding(
+                      padding: EdgeInsets.all(8),
+                      child: Column(
+                        children: [
+                          AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  "HOŞ GELDİNİZ🦩 ",
+                                  textStyle: const TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xffFF74B1),
+                                      fontFamily: 'Arimo-Bold'
+                                  ),
+                                  speed: const Duration(milliseconds: 80),
+                                ),
+                              ],
+                              totalRepeatCount: 5,
+                              pause: const Duration(milliseconds: 100),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                              controller: myAnimatedTextController
+                          ),
 
-                CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingoLogo.png")
-                ),
-
-                SizedBox(
-                  width: 25,
-                ),
-
-                CircleAvatar(
-                    radius: 30,
-                    backgroundColor: Color(0xff31363F),
-                    child: Image.asset("assets/flamingoLogo.png")
-                ),
-
-              ],
+                          AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  "Köyceğiz gölü manzaralı ferah, sıcak bir kafe ortamında leziz içeceklerin tadını çıkarırken aynı zamanda sosyal kulüp etkinlikleriyle yeni dostluklar kurabilir," +
+                                      " keyifli anlar yaşayabilirsiniz.\nRenkli dünyamıza katılın ve Flamingos House’un canlı atmosferini Yakından Keşfedin!",
+                                  textStyle: const TextStyle(
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff31363F),
+                                      fontFamily: 'Arimo-Regular'
+                                  ),
+                                  speed: const Duration(milliseconds: 40),
+                                ),
+                              ],
+                              totalRepeatCount: 1,
+                              pause: const Duration(milliseconds: 80),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                              controller: myAnimatedTextController
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 10,),
 
             Card(
               shadowColor: Colors.grey,
@@ -107,7 +136,7 @@ class _Home extends State<Home> {
               ),
               child: Container(
                 height: 260,
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0xff31363F),Color(0xff66cdaa)]
@@ -166,65 +195,47 @@ class _Home extends State<Home> {
               ),
             ),
 
-            SizedBox(height: 1,),
-            
-            Padding(padding: EdgeInsets.all(18.0),
+            SizedBox(height: 15,),
+
+            Text("Sosyal Medya Hesaplarımız",
+                style:TextStyle(
+                fontSize: 11.0,
+                fontWeight: FontWeight.normal,
+                color: Color(0xff31363F),
+                fontFamily: 'Arimo-Bold'
+                ),
+            ),
+
+            SizedBox(height: 5,),
+
+
+            SizedBox(height: 10,),
+
+            ElevatedButton(
+              onPressed: (){
+                inAppReview.openStoreListing(microsoftStoreId: 'com.rockstargames.gtasa');
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Card(
-                    color: Color(0xffB9F3E4),
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Column(
-                      children: [
-                        AnimatedTextKit(
-                            animatedTexts: [
-                              TypewriterAnimatedText(
-                                "HOŞ GELDİNİZ! ",
-                                textStyle: const TextStyle(
-                                    fontSize: 12.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xffFF74B1),
-                                    fontFamily: 'Arimo-Regular'
-                                ),
-                                speed: const Duration(milliseconds: 80),
-                              ),
-                            ],
-                            totalRepeatCount: 3,
-                            pause: const Duration(milliseconds: 100),
-                            displayFullTextOnTap: true,
-                            stopPauseOnTap: true,
-                            controller: myAnimatedTextController
-                        ),
-
-                        AnimatedTextKit(
-                            animatedTexts: [
-                              TypewriterAnimatedText(
-                                "Burada, sıcak bir kafe ortamında leziz içeceklerin tadını çıkarırken aynı zamanda sosyal kulüp etkinlikleriyle yeni dostluklar kurabilir," +
-                                    " keyifli anlar yaşayabilirsiniz.\nRenkli dünyamıza katılın ve Flamingos House’un canlı Atmosferini Yakından Keşfedin!",
-                                textStyle: const TextStyle(
-                                    fontSize: 12.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xff31363F),
-                                    fontFamily: 'Arimo-Regular'
-                                ),
-                                speed: const Duration(milliseconds: 50),
-                              ),
-                            ],
-                            totalRepeatCount: 1,
-                            pause: const Duration(milliseconds: 80),
-                            displayFullTextOnTap: true,
-                            stopPauseOnTap: true,
-                            controller: myAnimatedTextController
-                        ),
-                      ],
+                  Text('Bizi Değerlendirin',
+                    style:TextStyle(
+                        fontSize: 11.0,
+                        fontWeight: FontWeight.normal,
+                        color: Color(0xff31363F),
+                        fontFamily: 'Arimo-Bold'
                     ),
-                   ),
+                  ),
+                  Icon(
+                    CupertinoIcons.star,
+                    color: Colors.white,
+                    size: 24.0,
                   ),
                 ],
               ),
             ),
+
+            SizedBox(height: 1,),
           ],
         ),
       ),

@@ -46,8 +46,6 @@ class _Flamingo extends State<Flamingo> with SingleTickerProviderStateMixin{
                   children: [
                     Image.asset("assets/flamingosHouse.jpg",width: MediaQuery.sizeOf(context).width),
 
-                    SizedBox(height: 10,),
-
                     Center(
                       child: AnimatedBuilder(
                         animation: _animation,
@@ -86,7 +84,7 @@ class _Flamingo extends State<Flamingo> with SingleTickerProviderStateMixin{
                       ),
                     ),
                   ],
-                )
+                ),
               ),
             ],
         ),

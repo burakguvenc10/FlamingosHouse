@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../Notifications.dart';
+import 'package:flutter/cupertino.dart';
 
 class backAppbar extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class backAppbar extends StatelessWidget {
       backgroundColor: Colors.black87,
       leading: new IconButton(
           alignment: Alignment.centerLeft,
-          icon: Icon(Icons.arrow_back,color: Colors.white,size: 22,),
+          icon: Icon(CupertinoIcons.arrow_turn_up_left,color: Colors.white,size: 22,),
           onPressed:(){
             Navigator.pop(context);
           }
