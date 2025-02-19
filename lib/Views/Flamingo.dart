@@ -69,9 +69,9 @@ class _Flamingo extends State<Flamingo> with SingleTickerProviderStateMixin{
                       ),
                     ),
 
-                    Text("Flamingos House",style: TextStyle(fontSize: 18,color: Colors.black87,fontFamily: 'Arimo-Bold'),),
+                    Text("Flamingos House",style: TextStyle(fontSize: 18,color: Colors.black87,fontFamily: 'Arimo-Bold',letterSpacing: 1.6),),
 
-                    Text("Sosyal Kulüp🦩",style: TextStyle(fontSize: 15,color: Colors.blueGrey.shade200,fontFamily: 'Arimo-Bold'),),
+                    Text("Sosyal Kulüp🦩",style: TextStyle(fontSize: 15,color: Colors.blueGrey.shade200,fontFamily: 'Arimo-Bold',letterSpacing: 1.1),),
 
                     SizedBox(height: 2,),
                     

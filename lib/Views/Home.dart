@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -88,7 +89,8 @@ class _Home extends State<Home> {
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.bold,
                                       color: Color(0xffFF74B1),
-                                      fontFamily: 'Arimo-Bold'
+                                      fontFamily: 'Arimo-Bold',
+                                      letterSpacing: 1.2,
                                   ),
                                   speed: const Duration(milliseconds: 80),
                                 ),
@@ -100,26 +102,30 @@ class _Home extends State<Home> {
                               controller: myAnimatedTextController
                           ),
 
-                          AnimatedTextKit(
-                              animatedTexts: [
-                                TypewriterAnimatedText(
-                                  "Köyceğiz gölü manzaralı ferah, sıcak bir kafe ortamında leziz içeceklerin tadını çıkarırken aynı zamanda sosyal kulüp etkinlikleriyle yeni dostluklar kurabilir," +
-                                      " keyifli anlar yaşayabilirsiniz.\nRenkli dünyamıza katılın ve Flamingos House’un canlı atmosferini Yakından Keşfedin!",
-                                  textStyle: const TextStyle(
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0xff31363F),
-                                      fontFamily: 'Arimo-Regular'
+                          Container(
+                            height: 100,
+                            child: AnimatedTextKit(
+                                animatedTexts: [
+                                  TypewriterAnimatedText(
+                                    "Köyceğiz gölü manzaralı ferah, sıcak bir kafe ortamında leziz içeceklerin tadını çıkarırken aynı zamanda sosyal kulüp etkinlikleriyle yeni dostluklar kurabilir," +
+                                        " keyifli anlar yaşayabilirsiniz.\nRenkli dünyamıza katılın ve Flamingos House’un canlı atmosferini Yakından Keşfedin!",
+                                    textStyle: const TextStyle(
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff31363F),
+                                        fontFamily: 'Arimo-Regular',
+                                    ),
+                                    speed: const Duration(milliseconds: 40),
                                   ),
-                                  speed: const Duration(milliseconds: 40),
-                                ),
-                              ],
-                              totalRepeatCount: 1,
-                              pause: const Duration(milliseconds: 80),
-                              displayFullTextOnTap: true,
-                              stopPauseOnTap: true,
-                              controller: myAnimatedTextController
+                                ],
+                                totalRepeatCount: 1,
+                                pause: const Duration(milliseconds: 80),
+                                displayFullTextOnTap: true,
+                                stopPauseOnTap: true,
+                                controller: myAnimatedTextController
+                            ),
                           ),
+
                         ],
                       ),
                     ),
@@ -201,41 +207,87 @@ class _Home extends State<Home> {
                 style:TextStyle(
                 fontSize: 11.0,
                 fontWeight: FontWeight.normal,
-                color: Color(0xff31363F),
+                letterSpacing: 1.2,
+                color: Color(0xffFF74B1),
                 fontFamily: 'Arimo-Bold'
                 ),
             ),
 
-            SizedBox(height: 5,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SocialMediaButton.whatsapp(
+                  size: 30,
+                  onTap: () {
+                    print('onTap ');
+                  },
+                ),
+                SocialMediaButton.instagram(
+                  size: 30,
+                  onTap: () {
+                    print('onTap ');
+                  },
+                ),
+                SocialMediaButton.linkedin(
+                  size: 30,
+                  onTap: () {
+                    print('onTap ');
+                  },
+                ),
+              ],
+            ),
 
-
-            SizedBox(height: 10,),
+            SizedBox(height: 15,),
 
             ElevatedButton(
               onPressed: (){
-                inAppReview.openStoreListing(microsoftStoreId: 'com.rockstargames.gtasa');
+                inAppReview.openStoreListing(appStoreId: 'com.duolingo');
               },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Bizi Değerlendirin',
-                    style:TextStyle(
-                        fontSize: 11.0,
-                        fontWeight: FontWeight.normal,
-                        color: Color(0xff31363F),
-                        fontFamily: 'Arimo-Bold'
-                    ),
-                  ),
-                  Icon(
-                    CupertinoIcons.star,
-                    color: Colors.white,
-                    size: 24.0,
-                  ),
-                ],
+              child: Text('Bizi Değerlendirin',
+                style:TextStyle(
+                  fontSize: 11.0,
+                  fontWeight: FontWeight.normal,
+                  color: Color(0xff31363F),
+                  fontFamily: 'Arimo-Bold'
+                ),
               ),
             ),
 
-            SizedBox(height: 1,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.pink,
+                  size: 15.0,
+                ),
+                Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.pink,
+                  size: 12.0,
+                ),
+                Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.pink,
+                  size: 10.0,
+                ),
+                Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.pink,
+                  size: 8.0,
+                ),
+                Icon(
+                  CupertinoIcons.star_fill,
+                  color: Colors.pink,
+                  size: 6.0,
+                ),
+              ],
+            ),
+            Container(
+              height: 60,
+              width: 100,
+              child: Image.asset("assets/stores.png"),
+            ),
           ],
         ),
       ),

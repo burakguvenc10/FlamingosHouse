@@ -18,7 +18,7 @@ class Bottombar extends StatelessWidget {
         TabItem(icon: CupertinoIcons.home, title: 'Anasayfa'),
         TabItem(icon: CupertinoIcons.book, title: 'Menü'),
         TabItem(icon: Image.asset("assets/flamingoLogo.png",width: 50,height: 50)),
-        TabItem(icon: CupertinoIcons.guitars, title: 'Aktiviteler'),
+        TabItem(icon: CupertinoIcons.person_3, title: 'Aktiviteler'),
         TabItem(icon: CupertinoIcons.calendar_today, title: 'Program'),
       ],
       initialActiveIndex: 0,

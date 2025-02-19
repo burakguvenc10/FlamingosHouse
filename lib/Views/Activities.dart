@@ -8,7 +8,7 @@ class Activities extends StatefulWidget {
 
 class _Activities extends State<Activities> {
 
-  final List<String> imageList = [
+  final List<String> cardImageList = [
     "assets/activity/kolektifArt.jpg",
     "assets/activity/yoga.jpg",
     "assets/activity/mask.jpg",
@@ -21,29 +21,40 @@ class _Activities extends State<Activities> {
     "assets/activity/salsa.jpg",
   ];
 
+  final List<String> cardTitleList = [
+    "Kolektif Art",
+    "Yoga",
+    "Maske Workshop",
+    "Seramik Boyama",
+    "Boyama",
+    "Vine&Couple Art",
+    "Hamak Yoga",
+    "Bez Çanta-Mum Şamdan",
+    "Yüz Yoga",
+    "Salsa Bachata",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: 10,
       itemBuilder: (BuildContext context, int index){
         return Card(
+          shadowColor: Colors.blueGrey,
           child: Container(
             child: Column(
               children: [
+                Column(
+                    children: [
+                      Image.asset(cardImageList[index],height: 140,width:MediaQuery.sizeOf(context).width,fit: BoxFit.cover,),
 
-                Padding(padding: EdgeInsets.all(3),
-                child: Column(
-                  children: [
-                    Image.asset(imageList[index],height: 140,width:MediaQuery.sizeOf(context).width,),
-
-                    Container(
-                      color: Colors.grey.shade200,
-                      child: Center(
-                          child: Text("Yoga",style: TextStyle(fontSize: 17,color: Colors.black87,fontFamily: 'Arimo-Regular'),)
+                      Container(
+                        color: Colors.grey.shade200,
+                        child: Center(
+                            child: Text(cardTitleList[index],style: TextStyle(fontSize: 14,color: Colors.black87,fontFamily: 'Arimo-Bold'),textAlign: TextAlign.center)
+                        ),
                       ),
-                    ),
-                  ],
-                 ),
+                    ],
                 ),
               ],
             ),
